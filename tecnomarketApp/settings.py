@@ -25,7 +25,7 @@ SECRET_KEY = '3jqyx%x*+x-efmn2b073=@^)%$uq&4@vfzce8+kyxsz4t(%^pq'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['3.15.160.98', 'localhost', '127.0.0.1']
 
 #modulo de mensajeria de django
 MESSAGE_STORAGE="django.contrib.messages.storage.cookie.CookieStorage"
