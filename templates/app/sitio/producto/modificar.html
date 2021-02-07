@@ -1,0 +1,18 @@
+{% extends 'app/sitio/base.html' %}
+{% block contenido %}
+
+ <div class="row">
+ 	<div class="col-6">
+ 		<h2>editar producto</h2>
+ 		<form action="" method="POST" enctype="multipart/form-data">
+ 		     {% csrf_token %}
+ 		     {{form}}
+ 		     <br>
+ 		     <button type="reset" class="btn btn-secondary">Limpiar</button>
+ 		     <button type="submit" class="btn btn-primary">Enviar</button>
+
+ 		</form>
+ 	</div>
+ </div>
+{{mensaje}}
+{% endblock %}

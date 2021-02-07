@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+    <h2>contacto: sin form API</h2>
+
+    <form action="{% url 'formulario' %}" method="POST" >
+    	{% csrf_token %}
+      nombre:<input type="text" name="nombre"><br>
+      edad:<input type="text" name="edad"><br>
+      comentario:<input type="text" name="comentario"><br>
+      direccion:<input type="text" name="direccion"><br>
+      pais: <select name="pais" id="pais">
+				<option value="FRA">Francia</option>
+				<option value="CHI">Chile</option>
+				<option value="BRA">Brasil</option>
+				<option value="ARG">Argentina</option>
+				<option value="PER">Peru</option>
+			</select><br>
+      <input type="submit" name="" value="Enviar">
+    </form>
+</body>

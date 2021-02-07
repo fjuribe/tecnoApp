@@ -1,0 +1,40 @@
+{% extends 'app/sitio/base.html' %}
+{% block contenido %}
+{% load humanize %}
+
+
+<table class="table table-striped table-hover table-responsive">
+	<thead>
+		<tr>
+			<th>nombre</th>
+			<th>precio</th>
+			<th>marca</th>
+			<th>¿es nuevo?</th>
+			<th>accion</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for p in entity %}
+			<tr>
+				<td>{{p.nombre|title}}</td>
+				<td>{{p.precio|intcomma}}</td>
+				<td>{{p.marca|title}}</td>
+				<td>
+					{% if p.nuevo %}
+					   SI
+					{% else %}
+						NO
+					{% endif %}
+				</td>
+				<td>
+					<a class="btn btn-primary" href="{% url 'modificar-producto' p.id %}">Modificar</a>
+					<a class="btn btn-danger" href="{% url 'eliminar-producto' p.id %}">eliminar</a>
+				</td>
+			</tr>
+		{% endfor %}
+	</tbody>
+</table>
+<div>
+	{% include 'app/sitio/producto/paginator.html'  %}
+</div>
+{% endblock %}

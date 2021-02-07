@@ -1,0 +1,27 @@
+{% extends 'app/sitio/base.html' %}
+{% load static %}
+{% block contenido %}
+{% load crispy_forms_tags %}
+<h2>Contactanos!</h2>
+<form method="POST" class="formulario_contacto" id="formulario_contacto">
+    {% csrf_token %}
+
+    {{form|crispy}}
+    <br>
+    <button type="reset" id="btnEnviar" class="btn btn-secondary">Limpiar</button>
+    <button type="submit" id="btnEnviar" class="btn btn-primary">Enviar</button>
+    
+
+</form>
+{{mensaje}}
+<table id="tablacontactos">
+    
+</table>
+{% endblock %}
+{% block js %}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.min.js"></script>
+      <script src="{% static 'app/js/traducciones.js' %}"></script>
+    <script src="{% static 'app/js/feriados.js' %}"></script>
+
+{% endblock %}
